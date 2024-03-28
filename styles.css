@@ -31,7 +31,7 @@ body{
     min-height: 480px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
-.container::before{
+/*.container::before{
     content: '';
     position: absolute;
     top: -50%;
@@ -67,7 +67,7 @@ body{
                 transform: rotate(360deg);
             }
         }
-
+*/
 .container p{
     font-size: 14px;
     line-height: 20px;

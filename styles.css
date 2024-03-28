@@ -21,7 +21,7 @@ body{
     height: 100vh;
 }
 .container{
-    background-color: gray;
+    background-color: transparent;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
@@ -109,17 +109,15 @@ body{
 }
 
 .container form{
-    background-color: gray;
+    background-color: transparent;
     backdrop-filter: blur(30px);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 0 40px;
-    margin-top: 5px;
-    margin-left: 5px;
     border-radius: 30px;
-    height: 98%;
+    height: 100%;
 }
 
 .container input{

@@ -262,7 +262,7 @@
                 </div-->
                 <!--span>or use your email for registeration</span-->
                 <input type="text" placeholder="Name" id="Name" name="Name" required>
-                <input type="tel" placeholder="Mobile" id="mobile" name="mobile" required>
+                <input type="tel" placeholder="Register number" id="mobile" name="Regno" required>
                 <select id="dept" name="dept" required>
                     <option>Select your Department</option>
                     <option>Electronics And Communication Engineering</option>
@@ -281,7 +281,7 @@
             <form id="StudentForm" action="/submit-form" method = "post">
                 <h1><q>Students Login</q></h1>
                 <input type="text" placeholder="Name" name="Name" required>
-                <input type="tel" placeholder="Mobile" name="mobile" required>
+                <input type="tel" placeholder="Register number" name="Regno" required>
                 <select name="dept" required>
                     <option>Select your Department</option>
                     <option>Electronics And Communication Engineering</option>
@@ -301,12 +301,14 @@
                 <div class="toggle-panel toggle-left">
                     <h1>Welcome!!!</h1>
                     <p><b>Are You a Student..?</b></p>
-                    <button class="hidden" id="login">Yes</button>
+                    <input type="hidden" id="student" name="studentt" value="abcd">
+                    <button type="button" class="hidden" id="login" onclick="stu()">Yes</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Welcome!</h1>
                     <p><b>Are you a Faculty..?</b></p>
-                    <button class="hidden" id="register">Yes</button>
+                    <input type="text" id="faculty" name="facultyy" value="abc">
+                    <button type="button" class="hidden" id="register" onclick="fac()">Yes</button>
                 </div>
             </div>
         </div>
@@ -317,11 +319,15 @@
         const loginBtn = document.getElementById('login');
 
         registerBtn.addEventListener('click', () => {
+            
             container.classList.add("active");
+            
         });
 
         loginBtn.addEventListener('click', () => {
+            
             container.classList.remove("active");
+            
         });
 
         function faculty(event) {
@@ -341,14 +347,28 @@
         };
 
 
-
         function Student(event) {
             event.preventDefault();
             
             window.location.href="Student.html";
-
         };
 
+        // function sendValue() {
+        //     var valueToSend = "Hello from HTML!";
+        //     handleValue(valueToSend);
+        // }
+
+        function fac(){
+            // Store the value of button b1 in the hidden input field
+            document.getElementById('student').value = "StudentValue";
+            
+        }
+
+        function stu(){
+            // Store the value of button b1 in the hidden input field
+            document.getElementById('faculty').value = "facultyValue";
+            
+        }
     </script>
 </body>
 

@@ -1,40 +1,55 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
-
-// Middleware to parse the body of the request
+        
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Route to serve the HTML file
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-// Route to handle the form submission
+
+// app.get('/handleValue', (req, res) => {
+//   const value = req.query.value;
+//   console.log(value); // Outputs: "Hello from HTML!"
+//   // Do something with the value
+//   res.send("Sent Successfully");
+// });
+
 app.post('/submit-form', (req, res) => {
     const name = req.body.Name;
-    const mobile = req.body.mobile;
+    const Regno = req.body.Regno;
+    const dept = req.body.dept;
+    const password = req.body.password;
+    const faculty = req.body.facultyy;
+    const student = req.body.studentt 
+    console.log(`Username: ${name}, Register number: ${Regno}, Department: ${dept}, Password: ${password}, faculty: ${faculty}, Student: ${student}`);
 
-    console.log(`Username: ${name}, Mobile: ${mobile}`);
-
-    // Redirect back to the form or to a new page
-    res.send('Form submitted successfully!');
-    
+     for(let i=0; i<results.length; i++){
+      if(Regno===results[i].Regno){
+        res.sendFile(__dirname + '/Student1.html');
+      }
+    }
+    //res.send('Form submitted successfully!');   
 
 });
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+       
 
 
 
-// Import the mysql module
+
+
+
 const mysql = require('mysql');
 
-// Create a connection object
 const connection = mysql.createConnection({
   host     : 'localhost',
   port     : '3306',
@@ -43,7 +58,7 @@ const connection = mysql.createConnection({
   database : 'dummy'
 });
 
-// Connect to the database
+
 connection.connect(function(err) {
   if (err) {
     return console.error('error: ' + err.message);
@@ -52,25 +67,17 @@ connection.connect(function(err) {
   console.log('Connected to the MySQL server.');
 });
 
-// Query the database
 connection.query('SELECT * FROM student', function (error, results, fields) {
   if (error) {
     throw error;
   }
 
-  // results is an array with row objects
   console.log(results);
 
-  // Example: Accessing a specific field from the first row
+
   if (results.length > 0) {
     console.log('First row name field:', results[0].name);
   }
 });
 
-// Close the connection
 connection.end();
-
-
-
-
-

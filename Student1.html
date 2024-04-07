@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student1 Login</title>
+
+    <style>
+
+        /* Universal Selector*/
+        *{
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            background-color: ivory; 
+        }
+
+        /*Title with logo*/
+        header{
+            display: flex;
+            height: 125px;
+        }
+        .logo {
+            width: 12%;
+        }
+        .title {
+            width: 88%;
+        }
+        
+        /* Content  */
+        .container{
+            background: white;  
+            position: relative; 
+            max-width: 100%;
+            height: 1000px;     
+        }
+
+
+        /*For Mobile Screens*/
+        @media screen and (max-width: 768px) {
+            .container .profile{
+                width: 0;
+                height: 0;
+                position: relative;
+                z-index: 1000;
+                overflow: hidden;
+                border: solid gray 2px;
+                box-shadow: 0px 6px 3px 2px black;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .container .profile .profileimg {
+                width: 150px;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .container .profile h1{
+            background: transparent;
+            color: blue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative;
+            top: 220px;
+            text-align: center;
+        }
+
+        /*Navigation Bar*/
+        .container .profile ul{
+            background: transparent;
+            width: 95%;
+            position: relative;
+            top: 260px;
+            left: 0;
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .container .profile ul li {
+            background: transparent;
+            padding: 10px;
+            border: none;
+        }
+
+        .container .profile ul li:hover {
+            background-color: rgb(212, 255, 255);
+            backdrop-filter: blur(90%);
+            padding: 10px;
+            border-top: 1px solid gray;
+            border-bottom: groove 1px gray;
+            color: blue ;
+            font-size: larger;
+            font-family: 'playfair display';
+            font-weight: bold;
+            transition: 0.8s;
+            transition-delay: -0.1s;
+            
+        }
+
+            .container .content {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(201, 225, 227);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .menuBar {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            z-index: 2000;
+        }
+        #menuBar2 {
+            position: relative;
+            left: 200px;
+            top: -200px;
+        }
+                /*Sidebar*/
+            .container .sbar {
+            width: 150px;
+            height: 100px;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+
+        .container .sbar #IIyear {
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-radius: 8px;
+                color: #333333;
+                background-color: rgb(208, 242, 243);
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: 0px;
+                top: 50px;
+
+        }
+
+        .container .sbar #IIIyear {
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-radius: 8px;
+                color: #333333;
+                background-color: rgb(208, 242, 243);
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: 0px;
+                top: 95px;
+        }
+
+        .container .sbar #IVyear {
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-radius: 8px;
+                color: #333333;
+                background-color: rgb(208, 242, 243);
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: 0px;
+                top: 140px;
+        }
+        }
+
+
+        /*For Desktop Screens*/
+        @media screen and (min-width: 768px) {
+            
+            .menuBar {
+                display: none;
+            }
+            /* Profile  */
+            .container .profile{
+            height: 100%;
+            width: 16.75%;
+            background-color: rgb(208, 242, 243);
+            backdrop-filter: blur(30%);
+            border: solid gray 2px;
+            box-shadow: 0px 6px 3px 2px black;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: absolute;
+            z-index: 1;
+        }
+        .container .profile h1{
+            background: transparent;
+            color: blue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative;
+            top: 40px;
+            text-align: center;
+        }
+        .container .profile .profileimg{
+            background: transparent;
+            margin: 0px;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            top: 4%;
+            left: 75px;
+        }
+
+        /*Navigation Bar*/
+        .container .profile ul{
+            background: transparent;
+            width: 95%;
+            position: relative;
+            
+            top: 100px;
+            left: 0;
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .container .profile ul li {
+            background: transparent;
+            padding: 10px;
+            border: none;
+        }
+
+        .container .profile ul li:hover {
+            background-color: black;
+            color: aqua ;
+            font-size: larger;
+            font-family: 'playfair display';
+            backdrop-filter: blur(90%);
+            padding: 10px;
+            border-top: 2px solid white;
+            border-bottom: groove 2px white;
+            transition: 0.4s;
+            transition-duration: -0.8s;
+        }
+        .container .content {
+            
+            width: 83.25%;
+            height: 100%;
+            background-image:linear-gradient(to right,rgb(197, 226, 228),rgb(157, 233, 235),rgb(116, 235, 239),rgb(39, 237, 244));
+            position: absolute;
+            right: 0px;
+        }
+
+        /*Sidebar*/
+        .container .sbar {
+            width: 150px;
+            height: 100px;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+
+        .container .sbar #IIyear{
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                padding-left: -20px;
+                border: solid gold 2px;
+                border-radius: 20px;
+                color: gold;
+                background-color: black;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: -70px;
+                top: 50px;
+
+        }
+        .container .sbar #IIyear:hover{
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                color: blue;
+                background-color: whitesmoke;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                font-weight: bold;
+                right: 0px;
+                top: 50px;
+                transition-duration: 0.8s;
+                transition-delay: -0.1s;
+                cursor: pointer;
+        }
+
+        .container .sbar #IIIyear {
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid gold 2px;
+                border-radius: 20px;
+                color: gold;
+                background-color: black;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: -70px;
+                top: 95px;
+        }
+        .container .sbar #IIIyear:hover{
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                color: blue;
+                background-color: whitesmoke;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                font-weight: bold;
+                right: 0px;
+                top: 95px;
+                transition: 0.8s;
+                transition-delay: -0.1s;
+                cursor: pointer;
+        }
+
+        .container .sbar #IVyear {
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid gold 2px;
+                border-radius: 20px;
+                color: gold;
+                background-color: black;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                right: -70px;
+                top: 140px;
+        }
+        .container .sbar #IVyear:hover{
+                position: absolute;
+                height: 40px;
+                width: 120px;
+                border: solid black 2px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                color: blue;
+                background-color: whitesmoke;
+                font-style:italic;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: larger;
+                font-weight: bold;
+                right: 0px;
+                top: 140px;
+                transition: 0.8s;
+                transition-delay: -0.1s;
+                cursor: pointer;
+                
+        }
+        }
+        /*  SCROLLER  */
+        ::-webkit-scrollbar {
+            width: 10px;/* width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffffff; /* white background */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #000000, #242422, #353533, #3d3d3c, #565a58, #7a7c7c, #929393, #b3b3b3, #ffffff); /* multicolored gradient for thumb */
+            
+    
+        }   
+
+        /*  Attendence Table  */
+
+        table{
+            display: none;
+            width: 100%;
+            border-collapse: collapse;
+            background-color:#f5f5f5;
+            border: solid gray 1px;
+        }
+        th,td{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th{
+            background-color: #ffffff;
+        }
+         /*    tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }  */
+        h2{
+            color: black;
+            text-align: center;
+        }
+        tr:hover{
+            background-color: rgb(146, 146, 146);
+            transform: scale(1.02);
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px -1px rgba(0, 0, 0, 0);
+            border: solid gray 1px;
+        }
+        .tr th{
+            justify-self: center;
+        }
+
+/*
+        .LMS{
+            background-color: white;
+            height: 800px;
+            width: 1300px;
+            margin: 17.25px;
+            border: solid black 2px;
+            position: relative;
+            
+        }
+        .sub{
+            background-color: rgb(110, 107, 155);
+            height: 800px;
+            width: 625px;
+        }
+        .prac{
+            background-color: rgb(170, 171, 171);
+            position: absolute;
+            height: 800px;
+            width: 625px;
+            top: 0px;
+            left: 625px;
+        }
+        .s .li{
+            height: 50px;
+            width: 150px;
+            margin: 20px;
+            padding: 10px;
+        }
+        .p{
+            background-color: gray;
+            height: 280px;
+            width: 180px;
+            display: inline-block;
+            padding: 5px;
+            padding-top: 20px;
+            margin: 5px;
+        }
+        */
+
+        
+        .LMS {
+            background: transparent;
+            position: absolute;
+            top: 100px;
+            left: 0px;
+            display: flex;
+            width: 400px;
+            height: 1000px;
+        }
+
+        .LMS .odd {
+            height:0px;
+            width: 0px;
+            border: 1px solid black;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 10px;
+            overflow: hidden;
+            
+        }
+        .LMS ul li:hover {
+            color: blue ;
+            font-size: larger;
+            font-family: 'playfair display';
+            border-top: 1px solid gray;
+            border-bottom: groove 1px gray;
+            font-size: larger;
+            font-weight: bold;
+            font-family: 'playfair display';
+        }
+        .LMS .odd li {
+            background: transparent;
+            width: 100px;
+            height: 30px;
+         }
+
+        .LMS .even {
+            height: 0px;
+            width: 0px;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            left: 50px;
+            overflow: hidden;
+        }
+        .LMS .even li:hover{
+            color: blue ;
+            font-size: larger;
+            font-family: 'playfair display';
+            border-top: 1px solid gray;
+            border-bottom: groove 1px gray;
+            font-family: 'playfair display';
+            font-weight: bold;
+        }
+        .LMS .even li {
+            background: transparent;
+            width: 100px;
+            height: 30px;
+        }
+
+        .LMS ul {
+            background: transparent;
+            list-style-type: none;
+        }
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <img class="logo" src="img/logo.jpg" alt="logo" >
+        <img class="title" src="img/title.jpg" alt="title">
+    </header>
+        
+        <!--
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="profile">
+                    <circle cx="16" cy="7.46" r="6.96" transform="rotate(-9.217 16 7.46)"></circle>
+                    <path d="M0.78998,24.04999C0.78998,28.15997,4.13,31.5,8.23999,31.5h15.52002c4.10999,0,7.45001-3.34003,7.45001-7.45001s-3.34003-7.45001-7.45001-7.45001H8.23999C4.13,16.59998,0.78998,19.94,0.78998,24.04999z"></path>
+                </svg>
+        -->
+    
+    <div class="container">
+        
+        <div class="profile" id="profile">
+            <img class="profileimg" src="img/profile2.png" alt="profile">
+            <h1>Student...</h1>
+                <ul class="NAV">
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black;"><li>Learning Materials</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Attendance</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Marks</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Fees Details</li></a>
+                </ul>
+                <button class="menuBar" onclick="abc2()" id="menuBar2"><i>X</i></button>
+        </div>
+        <div class="content">
+            <button class="menuBar" onclick="abc1()" id="menuBar1"><i>I</i></button>
+
+            <!-- L M S -->
+            <section class="LMS">
+                    <ul class="odd" id="odd1">
+                        <a onclick="f21()"><li>Subject 11</li></a>
+                        <a onclick="f22()"><li>Subject 2</li></a>
+                        <a onclick="f23()"><li>Subject 3</li></a>
+                        <a onclick="f24()"><li>Subject 4</li></a>
+                        <a onclick="f25()"><li>Subject 5</li></a>
+                        <a onclick="f26()"><li>Subject 6</li></a>
+                        <a onclick="f27()"><li>Practial 1</li></a>
+                        <a onclick="f28()"><li>Practial 2</li></a>
+                        <a onclick="f29()"><li>Practial 3</li></a>
+                    </ul>   
+                    <ul class="even" id="even1">
+                        <a onclick="f21()"><li>Subject 11</li></a>
+                        <a onclick="f22()"><li>Subject 2</li></a>
+                        <a onclick="f23()"><li>Subject 3</li></a>
+                        <a onclick="f24()"><li>Subject 4</li></a>
+                        <a onclick="f25()"><li>Subject 5</li></a>
+                        <a onclick="f26()"><li>Subject 6</li></a>
+                        <a onclick="f27()"><li>Practial 1</li></a>
+                        <a onclick="f28()"><li>Practial 2</li></a>
+                        <a onclick="f29()"><li>Practial 3</li></a>
+                    </ul>
+            </section>
+            <section class="LMS">
+                <ul class="odd" id="odd2">
+                    <a onclick="f311()"><li>Subject 111</li></a>
+                    <a onclick="f322()"><li>Subject 2</li></a>
+                    <a onclick="f333()"><li>Subject 3</li></a>
+                    <a onclick="f344()"><li>Subject 4</li></a>
+                    <a onclick="f355()"><li>Subject 5</li></a>
+                    <a onclick="f366()"><li>Subject 6</li></a>
+                    <a onclick="f377()"><li>Practial 1</li></a>
+                    <a onclick="f388()"><li>Practial 2</li></a>
+                    <a onclick="f399()"><li>Practial 3</li></a>
+                </ul>
+                
+                <ul class="even" id="even2">
+                    <a onclick="f311()"><li>Subject 111</li></a>
+                    <a onclick="f322()"><li>Subject 2</li></a>
+                    <a onclick="f333()"><li>Subject 3</li></a>
+                    <a onclick="f344()"><li>Subject 4</li></a>
+                    <a onclick="f355()"><li>Subject 5</li></a>
+                    <a onclick="f366()"><li>Subject 6</li></a>
+                    <a onclick="f377()"><li>Practial 1</li></a>
+                    <a onclick="f388()"><li>Practial 2</li></a>
+                    <a onclick="f399()"><li>Practial 3</li></a>
+                </ul>
+        </section>
+        <section class="LMS">
+            <ul class="odd" id="odd3">
+                <a onclick="f4111()"><li>Subject 1111</li></a>
+                <a onclick="f4222()"><li>Subject 2</li></a>
+                <a onclick="f4333()"><li>Subject 3</li></a>
+                <a onclick="f4444()"><li>Subject 4</li></a>
+                <a onclick="f4555()"><li>Subject 5</li></a>
+                <a onclick="f4666()"><li>Subject 6</li></a>
+                <a onclick="f4777()"><li>Practial 1</li></a>
+                <a onclick="f4888()"><li>Practial 2</li></a>
+                <a onclick="f4999()"><li>Practial 3</li></a>
+            </ul>
+            <ul class="even" id="even3">
+               <a onclick="f4111()"><li>Subject 1111</li></a>
+               <a onclick="f4222()"><li>Subject 2</li></a>
+               <a onclick="f4333()"><li>Subject 3</li></a>
+               <a onclick="f4444()"><li>Subject 4</li></a>
+               <a onclick="f4555()"><li>Subject 5</li></a>
+               <a onclick="f4666()"><li>Subject 6</li></a>
+               <a onclick="f4777()"><li>Practial 1</li></a>
+               <a onclick="f4888()"><li>Practial 2</li></a>
+               <a onclick="f4999()"><li>Practial 3</li></a>
+            </ul>
+      </section>
+
+            <!--Attendence Table-->
+            <div class="table">
+                <h2>Attendance Table</h2>
+                
+                <table>
+                  <tr class="tr">
+                    <th>S.no</th>
+                    <th>Date</th>
+                    <th>Student Name</th>
+                    <th>Attendence</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>01/01/2024</td>
+                    <td>Dinesh</td>
+                    <td>Present</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>02/01/2024</td>
+                    <td>Sathiarj</td>
+                    <td>Present</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>03/03/2024</td>
+                    <td>Gokul</td>
+                    <td>Present</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </table>
+                </div>
+        </div>
+
+        <div class="sbar">
+                <button class="year" id="IIyear" onclick="fun1()">II-YEAR</button>
+                <button class="year" id="IIIyear" onclick="fun2()">III-YEAR</button>
+                <button class="year" id="IVyear" onclick="fun3()">IV-YEAR</button>
+        </div>
+    </div>
+
+    <script>
+        function abc1() {
+      document.getElementById("profile").style.width = "250px";
+      document.getElementById("profile").style.height = "100%";
+    }
+    
+    function abc2() {
+      document.getElementById("profile").style.width = "0px";
+      document.getElementById("profile").style.height = "0px";
+    }
+
+    function fun1(){
+        document.getElementById("odd1").style.width = "400px";
+        document.getElementById("odd1").style.height = "400px";
+        fun5();
+        fun6();
+        
+    }
+    function fun2(){
+        document.getElementById("odd2").style.width = "400px";
+        document.getElementById("odd2").style.height = "400px";
+        fun4();
+        fun6();
+        
+    }
+    function fun3(){
+        
+        document.getElementById("odd3").style.width = "400px";
+        document.getElementById("odd3").style.height = "400px";
+        fun4();
+        fun5();
+        
+    }
+    function fun4(){
+        document.getElementById("odd1").style.width = "0px";
+        document.getElementById("odd1").style.height = "0px";
+    }
+    function fun5(){
+        document.getElementById("odd2").style.width = "0px";
+        document.getElementById("odd2").style.height = "0px";
+    }
+    function fun6(){
+        document.getElementById("odd3").style.width = "0px";
+        document.getElementById("odd3").style.height = "0px";
+    }
+
+    /*  L M S   Functions   */
+     
+      </script>
+</body>
+</html>

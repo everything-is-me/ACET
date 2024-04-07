@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Login</title>
+
+    <style>
+
+        /* Universal Selector*/
+        *{
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            background-color: ivory; 
+        }
+
+        /*Title with logo*/
+        header{
+            display: flex;
+            height: 125px;
+        }
+        .logo {
+            width: 12%;
+        }
+        .title {
+            width: 88%;
+        }
+        
+        /* Content  */
+        .container{
+            background: white;  
+            position: relative; 
+            width: 100%;
+            height: 1000px;     
+        }
+
+
+        /*For Mobile Screens*/
+        @media screen and (max-width: 768px) {
+            .container .profile{
+                width: 0;
+                height: 0;
+                position: relative;
+                z-index: 1000;
+                overflow: hidden;
+            }
+
+            .container .profile .profileimg {
+                width: 150px;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .container .profile h1{
+            background: transparent;
+            color: blue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative;
+            top: 220px;
+            text-align: center;
+        }
+
+        /*Navigation Bar*/
+        .container .profile ul{
+            background: transparent;
+            width: 95%;
+            position: relative;
+            text-align: center;
+            top: 260px;
+            left: 0;
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .container .profile ul li {
+            background: transparent;
+            padding: 10px;
+            border: none;
+        }
+
+        .container .profile ul li:hover {
+            background-color: rgb(212, 255, 255);
+            backdrop-filter: blur(30%);
+            padding: 10px;
+            border-top: 1px solid gray;
+            border-bottom: groove 1px gray;
+        }
+
+            .container .content {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(201, 225, 227);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .menuBar {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            z-index: 2000;
+        }
+        #menuBar2 {
+            position: relative;
+            left: 200px;
+            top: -200px;
+        }
+        }
+
+
+        /*For Desktop Screens*/
+        @media screen and (min-width: 768px) {
+            
+            .menuBar {
+                display: none;
+            }
+            /* Profile  */
+            .container .profile{
+            height: 100%;
+            width: 250px;
+            background-color: rgb(208, 242, 243);
+            backdrop-filter: blur(30%);
+            border: none;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            position: absolute;
+        }
+        .container .profile h1{
+            background: transparent;
+            color: blue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            position: relative;
+            top: 40px;
+            text-align: center;
+        }
+        .container .profile .profileimg{
+            background: transparent;
+            margin: 0px;
+            height: 100px;
+            width: 100px;
+            position: relative;
+            top: 30px;
+            left: 75px;
+        }
+
+        /*Navigation Bar*/
+        .container .profile ul{
+            background: transparent;
+            width: 95%;
+            position: relative;
+            
+            top: 100px;
+            left: 0;
+            list-style-type: none;
+            padding: 10px;
+        }
+
+        .container .profile ul li {
+            background: transparent;
+            padding: 10px;
+            border: none;
+        }
+
+        .container .profile ul li:hover {
+            background-color: rgb(212, 255, 255);
+            color: blue ;
+            font-size: larger;
+            font-family: 'playfair display';
+            backdrop-filter: blur(30%);
+            padding: 10px;
+            border-top: 1px solid gray;
+            border-bottom: groove 1px gray;
+        }
+        .container .content {
+            
+            width: 83.25%;
+            height: 100%;
+            background-color: rgb(201, 225, 227);
+            position: relative;
+            left: 253px;
+        }
+
+        /*Sidebar*/
+        .container .sbar {
+            width: 150px;
+            height: 100px;
+            background: transparent;
+            position: absolute;
+            right: 0;
+            top: 50px;
+        }
+
+        .container .sbar #IIyear {
+                position: absolute;
+                height: 20px;
+                right: 0px;
+                top: 50px;
+
+        }
+
+        .container .sbar #IIIyear {
+                position: absolute;
+                height: 20px;
+                right: 0px;
+                top: 60px;
+        }
+
+        .container .sbar #IVyear {
+                position: absolute;
+                height: 20px;
+                right: 0px;
+                top: 70px;
+        }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <img class="logo" src="logo.jpg" alt="logo" >
+        <img class="title" src="title.jpg" alt="title">
+    </header>
+        
+        <!--
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="profile">
+                    <circle cx="16" cy="7.46" r="6.96" transform="rotate(-9.217 16 7.46)"></circle>
+                    <path d="M0.78998,24.04999C0.78998,28.15997,4.13,31.5,8.23999,31.5h15.52002c4.10999,0,7.45001-3.34003,7.45001-7.45001s-3.34003-7.45001-7.45001-7.45001H8.23999C4.13,16.59998,0.78998,19.94,0.78998,24.04999z"></path>
+                </svg>
+        -->
+    
+    <div class="container">
+        
+        <div class="profile" id="profile">
+            <img class="profileimg" src="img/profile2.png" alt="profile">
+            <h1>Faculty...</h1>
+                <ul class="NAV">
+                    
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black;"><li>Learning Materials</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Attendance</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Marks</li></a>
+                    <a href="https://youtube.com/" style="text-decoration: none; color: black"><li>Fees Details</li></a>
+                </ul>
+                <button class="menuBar" onclick="abc2()" id="menuBar2"><i>X</i></button>
+        </div>
+        <div class="content">
+            <button class="menuBar" onclick="abc1()" id="menuBar1"><i>I</i></button>
+        </div>
+
+
+        <div class="sbar">
+                <button class="year" id="IIyear">II-year</button>
+                <button class="year" id="IIIyear">III-year</button>
+                <button class="year" id="IVyear">IV-year</button>
+        </div>
+    </div>
+
+    <script>
+        function abc1() {
+      document.getElementById("profile").style.width = "250px";
+      document.getElementById("profile").style.height = "100%";
+    }
+    
+    function abc2() {
+      document.getElementById("profile").style.width = "0px";
+      document.getElementById("profile").style.height = "0px";
+    }
+    
+      </script>
+</body>
+</html>
